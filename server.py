@@ -3,7 +3,7 @@ import pandas as pd
 import random
 import warnings
 
-city_data = pd.read_excel(r"C:\Users\ecena\OneDrive\Belgeler\PlateCodePrediction\plate_list.xlsx")
+city_data = pd.read_excel(r"C:\\Users\\ecena\\OneDrive\Belgeler\\PlateCodePrediction\\plate_list.xlsx")
 cities = city_data['CityName'].tolist()
 codes = city_data['PlateNumber'].tolist()
 city_codes = dict(zip(cities, codes))
