@@ -2,14 +2,14 @@ import socket
 import pandas as pd
 import random
 
-city_data = pd.read_excel("C:\Users\ecena\OneDrive\Belgeler\PlateCodePrediction\plate_list.xlsx")
-cities = city_data['City'].tolist()
-codes = city_data['Code'].tolist()
+city_data = pd.read_excel(r"C:\Users\ecena\OneDrive\Belgeler\PlateCodePrediction\plate_list.xlsx")
+cities = city_data['CityName'].tolist()
+codes = city_data['PlateNumber'].tolist()
 city_codes = dict(zip(cities, codes))
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = 'localhost'
-port = 12345
+port = 8080
 server_socket.bind((host, port))
 server_socket.listen(5)
 
