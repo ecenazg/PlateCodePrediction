@@ -1,6 +1,7 @@
 import socket
 import pandas as pd
 import random
+import warnings
 
 city_data = pd.read_excel(r"C:\Users\ecena\OneDrive\Belgeler\PlateCodePrediction\plate_list.xlsx")
 cities = city_data['CityName'].tolist()
@@ -18,6 +19,7 @@ while True:
     print(f"Connection from {addr}")
     selected_city = random.choice(list(city_codes.keys()))
     client_socket.send(f"Guess the plate code for {selected_city}: ".encode())
+    warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
 
     while True:
         guess = client_socket.recv(1024).decode().strip()
